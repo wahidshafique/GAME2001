@@ -30,7 +30,7 @@ int main() {
 		cout << "Enter in a word to convert to pig latin, x to end: ";
 		cin >> word;
 		if (word == "x") active = false;
-			else cout << "We get: " << pigLatin(word) << endl;
+		else cout << "We get: " << pigLatin(word) << endl;
 	} while (active);
 	return 0;
 }
