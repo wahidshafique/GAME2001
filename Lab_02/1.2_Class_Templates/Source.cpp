@@ -34,6 +34,11 @@ int main() {
 	Rectangle <double> rect2(300.89, 2.7);
 	Rectangle <double> rect3(20, 9);
 
-	mid(rect1, rect2, rect3);
+	cout << rect1.getWidth() << ", " << rect1.getHeight() << endl;
+	cout << rect2.getWidth() << ", " << rect2.getHeight() << endl;
+	cout << rect3.getWidth() << ", " << rect3.getHeight() << endl;
+
+	Rectangle <double> midVal(mid(rect1, rect2, rect3));
+	cout << "Middle rect is: " << midVal.getWidth() << ", " << midVal.getHeight() << endl;
 
 }
