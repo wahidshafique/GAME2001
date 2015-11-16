@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{2FBD70B0-AFDC-4DD9-8C38-5EB842625D4F}</ProjectGuid>
+    <ProjectGuid>{4E59C666-11A9-4731-A661-5CA5F30A79E9}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Lab_04</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
@@ -142,6 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
