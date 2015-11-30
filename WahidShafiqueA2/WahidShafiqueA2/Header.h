@@ -12,27 +12,20 @@ class RankDeck {
 public:
 	RankDeck();
 	void shuffle();
-	void dealNextCard();
+	void dealNextCard(Queue<int> *x, Queue<int> *y);
 	bool cardsLeft() { return anyCardsLeft; }
 };
 
 class WarGame {
 	int maxNumGames;
+	int battlesWaged;
+
 public:
 	WarGame(int);
-
-	void battle();
-
-	bool play() {
-		//The play method, when invoked, must create three queues, two for each
-		//player’s hand, and one for the prize pile of cards.
-		//RankDeck player1Deck(26);
-		//RankDeck player2Deck(26);
-		//RankDeck prizePile(1);
-		return true;
-	}
-
-	int battlesWaged() {
+	bool play();
+	void battle(Queue <int> *x, Queue<int> *y, Queue<int> *prz);
+	~WarGame() {
 
 	}
+	//int battlesWaged();
 };

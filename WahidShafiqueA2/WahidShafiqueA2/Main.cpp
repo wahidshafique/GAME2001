@@ -1,6 +1,7 @@
 #include "Header.h"
 
 int main() {
-	RankDeck deck;
 	//start.play();
+	WarGame game(6);
+	game.play();
 }

@@ -13,10 +13,6 @@ RankDeck::RankDeck() {
 			index++;
 		}
 	}
-	shuffle(); //TEST SHUFFLE 
-	for (int c = 0; c < DECKSIZE; c++) {
-		cout << deck[c] << endl;  // Just print number
-	}
 };
 
 void RankDeck::shuffle() {
@@ -29,16 +25,46 @@ void RankDeck::shuffle() {
 	}
 }
 
-void RankDeck::dealNextCard() {
+void RankDeck::dealNextCard(Queue<int> *p1, Queue<int> *p2) {
+	while (!deck.empty()) {
+		p1->push(deck.back());
+		deck.pop_back();
+		p2->push(deck.back());
+		deck.pop_back();
 
+		cout << p1->back() << endl;
+		cout << p2->back() << endl;
+	}
 }
-
 //WARGAME
 
-WarGame::WarGame(int max):maxNumGames(max) {
+WarGame::WarGame(int max) : maxNumGames(max) {
 	//cout << maxNumGames;
 }
 
-void WarGame::battle() {
+bool WarGame::play() {
+	Queue <int> player1(DECKSIZE / 2);
+	Queue <int> player2(DECKSIZE / 2);
+	Queue <int> prizePile(DECKSIZE);
+
+	RankDeck deck;
+	deck.shuffle();
+	deck.dealNextCard(&player1, &player2);
+	
+	battle(&player1, &player2, &prizePile);
+	//cout << player2.back();
+	
+	return true;
+}
+
+void WarGame::battle(Queue <int> *p1, Queue<int> *p2, Queue<int> *prz) {
+	if ((p1->front()) > (p2->front())) {
+		p1->push(p2->front());
+		p1->push(p1->front());
+	}
+	
+	cout << p1->front() <<endl;
+	p1->pop();
+	cout << p1->front();
 
 }
