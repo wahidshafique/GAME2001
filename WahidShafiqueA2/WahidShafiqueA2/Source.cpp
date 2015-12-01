@@ -31,9 +31,6 @@ void RankDeck::dealNextCard(Queue<int> *p1, Queue<int> *p2) {
 		deck.pop_back();
 		p2->push(deck.back());
 		deck.pop_back();
-
-		cout << p1->back() << endl;
-		cout << p2->back() << endl;
 	}
 }
 //WARGAME
@@ -50,21 +47,37 @@ bool WarGame::play() {
 	RankDeck deck;
 	deck.shuffle();
 	deck.dealNextCard(&player1, &player2);
-	
+
 	battle(&player1, &player2, &prizePile);
 	//cout << player2.back();
-	
+
 	return true;
 }
 
 void WarGame::battle(Queue <int> *p1, Queue<int> *p2, Queue<int> *prz) {
-	if ((p1->front()) > (p2->front())) {
-		p1->push(p2->front());
-		p1->push(p1->front());
-	}
-	
-	cout << p1->front() <<endl;
-	p1->pop();
-	cout << p1->front();
+	static int games = 0;
+	cout << games;
+	if (!p1->isEmpty() || !p2->isEmpty()) {
+		games += 1;
+		if ((p1->front()) > (p2->front())) {
+			p1->push(p2->front());//push p2's played card to the bottom of your deck
+			p2->pop();//remove that card from p2 front NOTE: pop is Pop_Front()
 
+			p1->push(p1->front());//place own(p1) played card to the bottom
+			p1->pop();//remove that card from p1 front
+
+			battle(p1, p2, prz);
+
+		} else if ((p1->front()) < (p2->front())) {
+			p2->push(p1->front());
+			p1->pop();
+
+			p2->push(p2->front());
+			p2->pop();
+			battle(p1, p2, prz);
+		} else {
+			//WAR
+		}
+
+	}
 }
