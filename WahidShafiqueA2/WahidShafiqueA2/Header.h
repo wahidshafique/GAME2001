@@ -6,7 +6,7 @@ const int DECKSIZE = 52;
 
 class RankDeck {
 	bool anyCardsLeft = true;
-	//container for the cards is vector for shuffling/deal purposes and flexibility 
+	//container for the cards is vector for shuffling/deal purposes and flexibility
 	vector <int> deck;
 
 public:
@@ -25,7 +25,6 @@ public:
 	bool play();
 	void battle(Queue <int> *x, Queue<int> *y, Queue<int> *prz);
 	~WarGame() {
-
 	}
 	//int battlesWaged();
 };
