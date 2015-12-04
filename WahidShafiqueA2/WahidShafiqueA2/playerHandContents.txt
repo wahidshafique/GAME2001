@@ -1,37 +1,33 @@
 the contents of the p1 hand is
-1
-the contents of the p2 hand is
-8
-the contents of the p1 hand is
-9
-the contents of the p2 hand is
-11
-the contents of the p1 hand is
 2
 the contents of the p2 hand is
-5
+6
+the contents of the p1 hand is
+6
+the contents of the p2 hand is
+3
+the contents of the p1 hand is
+11
+the contents of the p2 hand is
+1
+the contents of the p1 hand is
+11
+the contents of the p2 hand is
+12
+the contents of the p1 hand is
+4
+the contents of the p2 hand is
+3
 the contents of the p1 hand is
 10
 the contents of the p2 hand is
-12
-the contents of the p1 hand is
-13
-the contents of the p2 hand is
-13
-the contents of the p1 hand is
-1
-the contents of the p2 hand is
 5
 the contents of the p1 hand is
-7
+2
 the contents of the p2 hand is
-8
+1
 the contents of the p1 hand is
-13
-the contents of the p2 hand is
-12
-the contents of the p1 hand is
-8
+4
 the contents of the p2 hand is
 3
 the contents of the p1 hand is
@@ -39,66 +35,70 @@ the contents of the p1 hand is
 the contents of the p2 hand is
 11
 the contents of the p1 hand is
+9
+the contents of the p2 hand is
+1
+the contents of the p1 hand is
+8
+the contents of the p2 hand is
+9
+the contents of the p1 hand is
+5
+the contents of the p2 hand is
+5
+the contents of the p1 hand is
+7
+the contents of the p2 hand is
+4
+the contents of the p1 hand is
+7
+the contents of the p2 hand is
+1
+the contents of the p1 hand is
+12
+the contents of the p2 hand is
+8
+the contents of the p1 hand is
+7
+the contents of the p2 hand is
+13
+the contents of the p1 hand is
+10
+the contents of the p2 hand is
+10
+the contents of the p1 hand is
+11
+the contents of the p2 hand is
+5
+the contents of the p1 hand is
+8
+the contents of the p2 hand is
+4
+the contents of the p1 hand is
+6
+the contents of the p2 hand is
+3
+the contents of the p1 hand is
+10
+the contents of the p2 hand is
+13
+the contents of the p1 hand is
+9
+the contents of the p2 hand is
+12
+the contents of the p1 hand is
+13
+the contents of the p2 hand is
+12
+the contents of the p1 hand is
 7
 the contents of the p2 hand is
 8
 the contents of the p1 hand is
-12
+2
 the contents of the p2 hand is
 9
 the contents of the p1 hand is
-4
-the contents of the p2 hand is
-2
-the contents of the p1 hand is
-10
-the contents of the p2 hand is
-12
-the contents of the p1 hand is
-6
-the contents of the p2 hand is
-3
-the contents of the p1 hand is
-7
-the contents of the p2 hand is
-9
-the contents of the p1 hand is
-5
-the contents of the p2 hand is
-9
-the contents of the p1 hand is
-5
-the contents of the p2 hand is
-6
-the contents of the p1 hand is
-4
-the contents of the p2 hand is
-1
-the contents of the p1 hand is
-10
-the contents of the p2 hand is
-2
-the contents of the p1 hand is
-1
-the contents of the p2 hand is
-3
-the contents of the p1 hand is
-4
-the contents of the p2 hand is
-10
-the contents of the p1 hand is
-11
-the contents of the p2 hand is
-3
-the contents of the p1 hand is
-7
-the contents of the p2 hand is
-11
-the contents of the p1 hand is
 2
 the contents of the p2 hand is
-6
-the contents of the p1 hand is
 13
-the contents of the p2 hand is
-4
