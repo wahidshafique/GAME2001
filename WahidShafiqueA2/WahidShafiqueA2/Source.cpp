@@ -66,25 +66,17 @@ bool WarGame::play() {
 void WarGame::battle() {
 
 	static int turns = 0;
+
 	turns += 1;
-	//POP IS POP FRONT HERE
-	//Get player1’s card from player1’s hand and put in prize pile
-
-
 	int p1CardTop = player1.front();
 	prizePile.push(p1CardTop);
-	//Get player2’s card from player2’s hand and put in prize pile
 	int p2CardTop = player2.front();
 	prizePile.push(p2CardTop);
 
 	if (p1CardTop > p2CardTop) {
-		/*Whoever has the higher of the two cards wins the battle prize(the two cards) and places those
-		cards at the bottom of their hands.*/
-
 		player1.pop();
 		player2.pop();
-		//now put the prize pile in the back of p1's hand
-		while (!prizePile.isEmpty()) {		//!!!!!!!FAILS HERE: root!= null
+		while (!prizePile.isEmpty()) {
 			player1.push(prizePile.front());
 			prizePile.pop();
 		}
@@ -119,7 +111,7 @@ void WarGame::battle() {
 		prizePile.push(p2CardTop);
 		player1.pop();//removing the recently pushed cards
 		player2.pop();
-		//prizePile.pop();
+		this->battle();
 	}
 }
 

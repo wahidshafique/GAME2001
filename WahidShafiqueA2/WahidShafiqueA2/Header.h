@@ -21,7 +21,7 @@ class WarGame {
 	int maxNumGames;
 	int battlesWaged;
 
-	Queue <int> player1 = Queue<int>(DECKSIZE);//each player starts with a hand of 26 cards
+	Queue <int> player1 = Queue<int>(DECKSIZE);
 	Queue <int> player2 = Queue<int>(DECKSIZE);
 	Queue <int> prizePile = Queue<int>(DECKSIZE);
 
@@ -29,8 +29,6 @@ public:
 	WarGame(int);
 	bool play();
 	void battle();
-	//void battle(Queue <int> *x, Queue<int> *y, Queue<int> *prz);
 	~WarGame() {
 	}
-	//int battlesWaged();
 };
