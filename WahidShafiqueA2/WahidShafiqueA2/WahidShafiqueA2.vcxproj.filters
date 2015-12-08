@@ -33,9 +33,4 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="playerHandContents.txt">
-      <Filter>Source Files</Filter>
-    </Text>
-  </ItemGroup>
 </Project>

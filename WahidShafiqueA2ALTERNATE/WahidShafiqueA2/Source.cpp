@@ -3,8 +3,7 @@
 #include <time.h>
 
 //RANK DECK
-RankDeck::RankDeck() {//here we are simply populating the dealer deck
-	//there are 13 ranks, and 4 suits, suits are arbitrary for this version of war
+RankDeck::RankDeck() {
 	for (int i = 0; i < 4; i++) {
 		for (int j = 1; j <= 13; j++) {
 			static int index = 0;
@@ -19,7 +18,7 @@ bool RankDeck::cardsLeft() {
 	return (cardPos != DECKSIZE);
 }
 
-void RankDeck::shuffle() {//shuffle the dealer deck
+void RankDeck::shuffle() {
 	srand(time(NULL));
 	for (int i = 0; i < DECKSIZE; i++) {
 		int r = rand() % DECKSIZE;
@@ -29,9 +28,8 @@ void RankDeck::shuffle() {//shuffle the dealer deck
 	}
 }
 
-int RankDeck::dealNextCard() {//from the dealer deck, evenly divvy out the cards
+int RankDeck::dealNextCard() {
 	while (!deck.empty()) {
-		//push all the cards to the back of the players respective hand
 		cardPos += 1;
 		return (deck[cardPos - 1]);
 	}
@@ -39,8 +37,6 @@ int RankDeck::dealNextCard() {//from the dealer deck, evenly divvy out the cards
 
 //WARGAME
 WarGame::WarGame(int max) : maxNumGames(max) {
-	//cout << maxNumGames;
-	//RankDeck* deck = new RankDeck;
 }
 
 bool WarGame::play() {

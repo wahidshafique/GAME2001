@@ -6,11 +6,8 @@ const int DECKSIZE = 52;
 
 class RankDeck {
 	bool anyCardsLeft = true;
-	//container for the cards is vector for shuffling/deal purposes and flexibility
 	vector <int> deck;
 public:
-
-
 	RankDeck();
 	void shuffle();
 	void dealNextCard(Queue<int> *x, Queue<int> *y);
@@ -18,17 +15,17 @@ public:
 };
 
 class WarGame {
-	int maxNumGames;
-	int battlesWaged;
+	int maxBattles;
 
 	Queue <int> player1 = Queue<int>(DECKSIZE);
 	Queue <int> player2 = Queue<int>(DECKSIZE);
 	Queue <int> prizePile = Queue<int>(DECKSIZE);
-
 public:
+	int battlesWaged = 0;
+	int totalBattlesWaged = 0;
 	WarGame(int);
 	bool play();
-	void battle();
+	bool battle();
 	~WarGame() {
 	}
 };
