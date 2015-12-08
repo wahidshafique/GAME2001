@@ -4,7 +4,7 @@
 
 RankDeck::RankDeck() {
 	for (int i = 0; i < 4; i++) {
-		for (int j = 1; j <= 13; j++) {
+		for (int j = 0; j < 13; j++) {
 			static int index = 0;
 			deck.push_back(j);
 			index++;
@@ -13,7 +13,7 @@ RankDeck::RankDeck() {
 };
 
 void RankDeck::shuffle() {
-	srand(time(NULL));
+	//srand(time(NULL));
 	for (int i = 0; i < DECKSIZE; i++) {
 		int r = rand() % DECKSIZE;
 		int temp = deck[i];
@@ -37,17 +37,17 @@ WarGame::WarGame(int max) : maxBattles(max) {
 }
 
 bool WarGame::play() {
+	Queue <int> player1(26);
+	Queue <int> player2(26);
+	Queue <int> prizePile(52);
 	RankDeck deck;
 	deck.shuffle();
 	deck.dealNextCard(&player1, &player2);
-	//static int battlesWaged = 0;
-	return battle();
+	return battle(player1, player2, prizePile, maxBattles);
 }
-bool WarGame::battle() {
-	if (battlesWaged >= maxBattles) return false;
-
+bool WarGame::battle(Queue <int> &player1, Queue <int> &player2, Queue <int> &prizePile, int batts) {
 	if (!player1.isEmpty() && !player2.isEmpty()) {
-		battlesWaged++;
+		totalBattlesWaged++;
 		int p1CardTop = player1.front();
 		prizePile.push(p1CardTop);
 		int p2CardTop = player2.front();
@@ -60,23 +60,24 @@ bool WarGame::battle() {
 				player1.push(prizePile.front());
 				prizePile.pop();
 			}
-			return battle();
+			batts--;
+			if (batts == 0)
+				return false;
+			else return battle(player1, player2, prizePile, batts);
 
 		} else if (p1CardTop < p2CardTop) {
 
 			player1.pop();
 			player2.pop();
-			while (prizePile.GetSize() != 0) {
+			while (!prizePile.isEmpty()) {
 				player2.push(prizePile.front());
 				prizePile.pop();
 			}
-			//cout << player1.GetSize() << endl;
-			//cout << player2.GetSize() << endl;
-			//cout << prizePile.GetSize() << endl;
-			//cout << "p2 won on turn" << battlesWaged << endl;
-			return battle();
-		} else if (p1CardTop == p2CardTop) {
-			//cout << "TIE" << endl;
+			batts--;
+			if (batts == 0)
+				return false;
+			else return battle(player1, player2, prizePile, batts);
+		} else {
 			player1.pop();
 			player2.pop();
 			for (int i = 0; i < 3; i++) {
@@ -87,7 +88,9 @@ bool WarGame::battle() {
 					player2.pop();
 				} else return true;
 			}
-			return battle();
+			if (batts == 0)
+				return false;
+			else return battle(player1, player2, prizePile, batts);
 		}
 	} else {
 		totalBattlesWaged += battlesWaged;

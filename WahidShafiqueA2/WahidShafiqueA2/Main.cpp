@@ -1,6 +1,8 @@
 #include "Header.h"
+#include <time.h>
 #include <iostream>
 int main() {
+	srand(time(NULL));
 	int gameToSim;
 	int maxBattles;
 	cout << "How many games should be simulated?: "; cin >> gameToSim; cout << endl;
@@ -20,6 +22,7 @@ int main() {
 
 	cout << "In the completed games: " << endl;
 	cout << "Total number of battles: " << game.totalBattlesWaged << endl;
-	cout << "Average number of battles: " << game.totalBattlesWaged / completed << endl;
+	(completed != 0) ? cout << "Average number of battles: " << game.totalBattlesWaged / completed << endl :
+		cout << "Average number of battles: " << game.totalBattlesWaged << endl;
 	cout << "Program Completed" << endl;
 }

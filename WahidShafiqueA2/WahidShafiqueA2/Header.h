@@ -17,15 +17,12 @@ public:
 class WarGame {
 	int maxBattles;
 
-	Queue <int> player1 = Queue<int>(DECKSIZE);
-	Queue <int> player2 = Queue<int>(DECKSIZE);
-	Queue <int> prizePile = Queue<int>(DECKSIZE);
 public:
 	int battlesWaged = 0;
 	int totalBattlesWaged = 0;
 	WarGame(int);
 	bool play();
-	bool battle();
+	bool battle(Queue <int> &player1, Queue <int> &player, Queue <int> &prizePile, int batts);
 	~WarGame() {
 	}
 };
